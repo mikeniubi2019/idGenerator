@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\netty\codec\SendCountEncode.java
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\client\IdGeneratorClient.java
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\netty\clientBootstrap\IdGeneratorBootstrap.java
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\netty\channleHandler\ReceiveChannelHandler.java
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\client\exception\TimeOutException.java
+C:\Users\Administrator\Desktop\idGeneratorClient\src\main\java\com\mike\idgenerator\netty\codec\ReceiveIdsDecode.java
