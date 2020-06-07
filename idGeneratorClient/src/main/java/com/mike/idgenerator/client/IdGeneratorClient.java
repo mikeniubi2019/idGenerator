@@ -41,8 +41,15 @@ public class IdGeneratorClient {
         if (this.channel==null||!this.channel.isOpen()) throw new Exception("创建客户端失败");
     }
 
-    public long[] getIds(int count) throws Exception {
+    public long[] getIds(int count) throws TimeoutException {
         this.channel.writeAndFlush(count);
-        return longsBlokingQueue.poll(3000,TimeUnit.MILLISECONDS);
+        long[] results = new long[0];
+        try {
+            results = longsBlokingQueue.poll(3000, TimeUnit.MILLISECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (results==null||results.length<1) throw new TimeoutException();
+        return results;
     }
 }
