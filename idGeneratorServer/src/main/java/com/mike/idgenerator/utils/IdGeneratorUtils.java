@@ -14,6 +14,8 @@ public class IdGeneratorUtils {
     private int count;
     private int defaultMachinId=0;
     private boolean isFast=true;
+    private int randomBound;
+    private int periodTime;
 
     public static long parseTimeStamp(long id){
         return id>>TIME_BIT;
@@ -57,11 +59,11 @@ public class IdGeneratorUtils {
                 count=0;
             }
         }else {
-            if (currentTime-lastTime<30000){
+            if (currentTime-lastTime<periodTime){
                 count+=1;
             }else {
                 lastTime = currentTime;
-                count=random.nextInt(50);
+                count=random.nextInt(randomBound);
             }
         }
         return count;
@@ -88,8 +90,10 @@ public class IdGeneratorUtils {
         this.defaultMachinId = defaultMachinId;
     }
 
-    public IdGeneratorUtils(boolean isFast) {
+    public IdGeneratorUtils(boolean isFast, int randomBound, int periodTime) {
         this.isFast = isFast;
+        this.randomBound = randomBound;
+        this.periodTime = periodTime;
     }
 
     public IdGeneratorUtils() {

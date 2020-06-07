@@ -59,7 +59,7 @@ public class IdGeneratorServiceBuilder {
     public void createIdGeneratorAndQueueHolders(){
         for (int index=0;index<Runtime.getRuntime().availableProcessors();index++){
             //TODO 在这里加入id生成器配置信息
-            IdGeneratorUtils idGeneratorUtils = new IdGeneratorUtils(this.isFast);
+            IdGeneratorUtils idGeneratorUtils = new IdGeneratorUtils(this.isFast,this.randomBound,this.periodTime);
             idGeneratorUtils.setDefaultMachinId(index);
             ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(1000);
             IdGeneratorAndQueueHolder idGeneratorAndQueueHolder = new IdGeneratorAndQueueHolder(idGeneratorUtils,arrayBlockingQueue);
